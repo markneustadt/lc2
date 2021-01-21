@@ -1,0 +1,181 @@
+[
+    {
+      "prizes": {
+        "asOfDate": "2021-01-17T04:10:06.139Z",
+        "values": [
+          {
+            "value": 730000000,
+            "type": "JACKPOT",
+            "name": "Jackpot"
+          }
+        ]
+      },
+      "_id": "6003b89eaeaf0e001e3fa292",
+      "game": "59bc2b6031947b9daf338d32",
+      "resultsAnnouncedAt": "2021-01-21T03:59:00.000Z",
+      "createdAt": "2021-01-17T04:10:06.204Z",
+      "updatedAt": "2021-01-17T04:10:06.204Z"
+    },
+    {
+      "prizes": {
+        "asOfDate": "2021-01-14T04:10:01.671Z",
+        "values": [
+          {
+            "value": 640000000,
+            "type": "JACKPOT",
+            "name": "Jackpot"
+          }
+        ]
+      },
+      "results": {
+        "asOfDate": "2021-01-17T04:10:06.093Z",
+        "values": [
+          {
+            "value": "14",
+            "type": "NUMBER"
+          },
+          {
+            "value": "20",
+            "type": "NUMBER"
+          },
+          {
+            "value": "39",
+            "type": "NUMBER"
+          },
+          {
+            "value": "65",
+            "type": "NUMBER"
+          },
+          {
+            "value": "67",
+            "type": "NUMBER"
+          },
+          {
+            "value": "2",
+            "type": "NUMBER",
+            "category": "EXTRA",
+            "name": "Powerball"
+          },
+          {
+            "value": "3",
+            "type": "NUMBER",
+            "category": "BONUS",
+            "name": "Power Play"
+          }
+        ]
+      },
+      "_id": "5fffc4194ffada001ee25234",
+      "game": "59bc2b6031947b9daf338d32",
+      "resultsAnnouncedAt": "2021-01-17T03:59:00.000Z",
+      "createdAt": "2021-01-14T04:10:01.867Z",
+      "updatedAt": "2021-01-17T04:10:06.164Z"
+    },
+    {
+      "prizes": {
+        "asOfDate": "2021-01-10T05:30:04.462Z",
+        "values": [
+          {
+            "value": 550000000,
+            "type": "JACKPOT",
+            "name": "Jackpot"
+          }
+        ]
+      },
+      "results": {
+        "asOfDate": "2021-01-14T04:10:01.441Z",
+        "values": [
+          {
+            "value": "4",
+            "type": "NUMBER"
+          },
+          {
+            "value": "19",
+            "type": "NUMBER"
+          },
+          {
+            "value": "23",
+            "type": "NUMBER"
+          },
+          {
+            "value": "25",
+            "type": "NUMBER"
+          },
+          {
+            "value": "49",
+            "type": "NUMBER"
+          },
+          {
+            "value": "14",
+            "type": "NUMBER",
+            "category": "EXTRA",
+            "name": "Powerball"
+          },
+          {
+            "value": "2",
+            "type": "NUMBER",
+            "category": "BONUS",
+            "name": "Power Play"
+          }
+        ]
+      },
+      "_id": "5ffa90dcfae894001ef8b2a3",
+      "game": "59bc2b6031947b9daf338d32",
+      "resultsAnnouncedAt": "2021-01-14T03:59:00.000Z",
+      "createdAt": "2021-01-10T05:30:04.719Z",
+      "updatedAt": "2021-01-14T04:10:01.726Z"
+    },
+    {
+      "prizes": {
+        "asOfDate": "2021-01-07T05:30:02.816Z",
+        "values": [
+          {
+            "value": 470000000,
+            "type": "JACKPOT",
+            "name": "Jackpot"
+          }
+        ]
+      },
+      "results": {
+        "asOfDate": "2021-01-10T04:10:06.702Z",
+        "values": [
+          {
+            "value": "14",
+            "type": "NUMBER"
+          },
+          {
+            "value": "26",
+            "type": "NUMBER"
+          },
+          {
+            "value": "38",
+            "type": "NUMBER"
+          },
+          {
+            "value": "45",
+            "type": "NUMBER"
+          },
+          {
+            "value": "46",
+            "type": "NUMBER"
+          },
+          {
+            "value": "13",
+            "type": "NUMBER",
+            "category": "EXTRA",
+            "name": "Powerball"
+          },
+          {
+            "value": "2",
+            "type": "NUMBER",
+            "category": "BONUS",
+            "name": "Power Play"
+          }
+        ]
+      },
+      "_id": "5ff69c5a8da466001e353d93",
+      "game": "59bc2b6031947b9daf338d32",
+      "resultsAnnouncedAt": "2021-01-10T03:59:00.000Z",
+      "createdAt": "2021-01-07T05:30:02.955Z",
+      "updatedAt": "2021-01-10T04:10:06.839Z"
+    }
+  ]

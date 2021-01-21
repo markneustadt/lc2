@@ -1,0 +1,390 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+    var mod2 = Model.Results.Results;
+    //TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+    //DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(@mod2.AsOfDate.DateTime, cstZone);
+    var cst = @mod2.AsOfDate.DateTime.ToLocalTime().ToLongDateString();
+    var asOfDate = cst;//Time.ToLongDateString();
+}
+<style>
+    .markrules {
+        width: 60px;
+        height: 40px;
+        box-shadow: unset;
+        font-size: x-large;
+        text-align: center
+    }
+</style>
+<form>
+
+<div class="text-center">
+    <h1 class="display-4">LottoChecker</h1>
+    <p>Enter the winning numbers here</p>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="win1">1</label>
+                <input class="markrules" onkeyup="doEval()" value="@mod2.Values[0].Value" type="text" id="win1" name="win1" maxlength="2" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="win2">2</label>
+                <input class="markrules" onkeyup="doEval()" value="@mod2.Values[1].Value" type="text" id="win2" name="win2" maxlength="2" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="win3">3</label>
+                <input class="markrules" onkeyup="doEval()" value="@mod2.Values[2].Value" type="text" id="win3" name="win3" maxlength="2" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="win4">4</label>
+                <input class="markrules" onkeyup="doEval()" value="@mod2.Values[3].Value" type="text" id="win4" name="win4" maxlength="2" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="win5">5</label>
+                <input class="markrules" onkeyup="doEval()" value="@mod2.Values[4].Value" type="text" id="win5" name="win5" maxlength="2" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="winPB">Power</label>
+                <input class="markrules" onkeyup="doEval()" value="@mod2.Values[5].Value" type="text" id="winPB" name="winPB" maxlength="2" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                <h2>Results as of: @asOfDate</h2>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>One</th>
+                        <th>Two</th>
+                        <th>Three</th>
+                        <th>Four</th>
+                        <th>Five</th>
+                        <th>Power</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick11" name="pick11" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick12" name="pick12" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick13" name="pick13" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick14" name="pick14" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick15" name="pick15" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick1P" name="pick1P" maxlength="2" />
+                        </td>
+                        <td>
+                            <span id="result1" name="result1"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick21" name="pick21" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick22" name="pick22" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick23" name="pick23" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick24" name="pick24" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick25" name="pick25" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick2P" name="pick2P" maxlength="2" />
+                        </td>
+                        <td>
+                            <span id="result2" name="result2"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick31" name="pick31" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick32" name="pick32" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick33" name="pick33" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick34" name="pick34" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick35" name="pick35" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick3P" name="pick3P" maxlength="2" />
+                        </td>
+                        <td>
+                            <span id="result3" name="result3"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick41" name="pick41" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick42" name="pick42" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick43" name="pick43" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick44" name="pick44" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick45" name="pick45" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick4P" name="pick4P" maxlength="2" />
+                        </td>
+                        <td>
+                            <span id="result4" name="result4"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick51" name="pick51" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick52" name="pick52" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick53" name="pick53" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick54" name="pick54" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick55" name="pick55" maxlength="2" />
+                        </td>
+                        <td>
+                            <input class="markrules" onkeyup="doEval()" type="text" id="pick5P" name="pick5P" maxlength="2" />
+                        </td>
+                        <td>
+                            <span id="result5" name="result5"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-6'>
+            <h2 class='align-center'>Powerball information</h2>
+            <table class='table table-striped table-hover'>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Matches</th>
+                        <th>Prize</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5 of 5 + POWERBALL</td><td>JACKPOT</td>
+                    </tr>
+                    <tr>
+                        <td>5 of 5</td><td>$1,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>4 of 5 + POWERBALL</td><td>$50,000</td>
+                    </tr>
+                    <tr>
+                        <td>4 of 5</td><td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>3 of 5 + POWERBALL</td><td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>3 of 5</td><td>$7</td>
+                    </tr>
+                    <tr>
+                        <td>2 of 5 + POWERBALL</td><td>$7</td>
+                    </tr>
+                    <tr>
+                        <td>1 of 5 + POWERBALL</td><td>$4</td>
+                    </tr>
+                    <tr>
+                        <td>0 of 5 + POWERBALL</td><td>$4</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class='col-md-6'>
+            <h2 class='align-center'>Megamillions information</h2>
+            <table class='table table-striped table-hover'>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Matches</th>
+                        <th>Prize</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5 of 5 + MEGABALL</td><td>JACKPOT</td>
+                    </tr>
+                    <tr>
+                        <td>5 of 5</td><td>$1,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>4 of 5 + MEGABALL</td><td>$10,000</td>
+                    </tr>
+                    <tr>
+                        <td>4 of 5</td><td>$500</td>
+                    </tr>
+                    <tr>
+                        <td>3 of 5 + MEGABALL</td><td>$200</td>
+                    </tr>
+                    <tr>
+                        <td>3 of 5</td><td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>2 of 5 + MEGABALL</td><td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>1 of 5 + MEGABALL</td><td>$4</td>
+                    </tr>
+                    <tr>
+                        <td>0 of 5 + MEGABALL</td><td>$2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</form>
+<script>
+
+    function doEval() {
+        var win1 = $("#win1").val();
+        var win2 = $("#win2").val();
+        var win3 = $("#win3").val();
+        var win4 = $("#win4").val();
+        var win5 = $("#win5").val();
+        var winPB = $("#winPB").val();
+
+        var winners = [win1, win2, win3, win4, win5];
+
+        evalElement($("#pick11"), winners);
+        evalElement($("#pick12"), winners);
+        evalElement($("#pick13"), winners);
+        evalElement($("#pick14"), winners);
+        evalElement($("#pick15"), winners);
+        evalPB($("#pick1P"), winPB);
+
+        evalElement($("#pick21"), winners);
+        evalElement($("#pick22"), winners);
+        evalElement($("#pick23"), winners);
+        evalElement($("#pick24"), winners);
+        evalElement($("#pick25"), winners);
+        evalPB($("#pick2P"), winPB);
+
+        evalElement($("#pick31"), winners);
+        evalElement($("#pick32"), winners);
+        evalElement($("#pick33"), winners);
+        evalElement($("#pick34"), winners);
+        evalElement($("#pick35"), winners);
+        evalPB($("#pick3P"), winPB);
+
+        evalElement($("#pick41"), winners);
+        evalElement($("#pick42"), winners);
+        evalElement($("#pick43"), winners);
+        evalElement($("#pick44"), winners);
+        evalElement($("#pick45"), winners);
+        evalPB($("#pick4P"), winPB);
+
+        evalElement($("#pick51"), winners);
+        evalElement($("#pick52"), winners);
+        evalElement($("#pick53"), winners);
+        evalElement($("#pick54"), winners);
+        evalElement($("#pick55"), winners);
+        evalPB($("#pick5P"), winPB);
+
+        setResults($("#pick11"), $("#pick12"), $("#pick13"), $("#pick14"), $("#pick15"), $("#pick1P"), $("#result1"));
+        setResults($("#pick21"), $("#pick22"), $("#pick23"), $("#pick24"), $("#pick25"), $("#pick2P"), $("#result2"));
+        setResults($("#pick31"), $("#pick32"), $("#pick33"), $("#pick34"), $("#pick35"), $("#pick3P"), $("#result3"));
+        setResults($("#pick41"), $("#pick42"), $("#pick43"), $("#pick44"), $("#pick45"), $("#pick4P"), $("#result4"));
+        setResults($("#pick51"), $("#pick52"), $("#pick53"), $("#pick54"), $("#pick55"), $("#pick5P"), $("#result5"));
+
+    };
+
+    function evalElement(e, winners) {
+        console.log('eval element of ' + e.attr('id') + ' = ' + e.val());
+        if (winners.includes(e.val()))
+            e.css("background-color", "green");
+        else
+            e.css("background-color", "white");
+    };
+
+    function evalPB(e, pb) {
+        console.log('eval element of ' + e.attr('id') + ' = ' + e.val());
+        if (e.val()===pb)
+            e.css("background-color", "green");
+        else
+            e.css("background-color", "white");
+    };
+
+    function setResults(a, b, c, d, e, p, result) {
+        var count = 0;
+        var labelText = '';
+        var pbText = '';
+        if (a.css('background-color') === 'rgb(0, 128, 0)') {
+            count++;
+        }
+        if (b.css('background-color') === 'rgb(0, 128, 0)') {
+            count++;
+        }
+        if (c.css('background-color') === 'rgb(0, 128, 0)') {
+            count++;
+        }
+        if (d.css('background-color') === 'rgb(0, 128, 0)') {
+            count++;
+        }
+        if (e.css('background-color') === 'rgb(0, 128, 0)') {
+            count++;
+        }
+        if (p.css('background-color') === 'rgb(0, 128, 0)') {
+            pbText = ' + POWERBALL';
+        }
+
+        labelText = count + ' of 5' + pbText;
+        result.text(labelText);
+    };
+
+
+
+</script>
