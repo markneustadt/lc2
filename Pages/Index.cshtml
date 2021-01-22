@@ -17,7 +17,7 @@
         text-align: center
     }
 </style>
-<form>
+@* <form> *@
 
 <div class="text-center">
     <h1 class="display-4">LottoChecker</h1>
@@ -58,6 +58,11 @@
             <div class="form-group">
                 <label for="winPB">Power</label>
                 <input class="markrules" onkeyup="doEval()" value="@mod2.Values[5].Value" type="text" id="winPB" name="winPB" maxlength="2" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button class='btn-primary' style='height:40px;' onclick='clearWinners()' value='Clear winners'>Clear Winners</button>
             </div>
         </div>
     </div>
@@ -286,8 +291,17 @@
         </div>
     </div>
     </div>
-</form>
+@* </form> *@
 <script>
+
+    function clearWinners() {
+        $("#win1").val('');
+        $("#win2").val('');
+        $("#win3").val('');
+        $("#win4").val('');
+        $("#win5").val('');
+        $("#winPB").val('');  
+    }
 
     function doEval() {
         var win1 = $("#win1").val();
